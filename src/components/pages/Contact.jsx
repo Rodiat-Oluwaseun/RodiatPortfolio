@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
-import Learn from './Learn';
+// import Learn from './Project';
+import Project from './Project';
 
 function Contact(props) {
   return (
@@ -26,7 +27,7 @@ function Contact(props) {
         Learn Less
       </Link>
       <Routes>
-        <Route path="learn" element={<Learn />} />
+        <Route path="project" element={<Project />} />
       </Routes>
     </div>
   );

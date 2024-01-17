@@ -1,20 +1,35 @@
 import React from 'react';
+import { useState } from 'react';
+import "../styles/NavTabs.css";
 import { NavLink } from 'react-router-dom';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+import logo from "../Images/rodiatlogo.png";
+// import Stack from '@mui/material/Stack';
+// import Button from '@mui/material/Button';
 
 
 
 
 
-function NavTabs() {
+const NavTabs = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div >
-      
-      <Stack spacing={5} direction="row d-flex">
-      
-      <Button variant="contained">
-      <NavLink
+    <nav className={`navbar ${isOpen ? 'open' : ''}`}>
+      <div className="navbar-container">
+        {/* <div className="logo"><img  src="images/rodiatlogo.png" /></div> */}
+        <img src={logo} alt="logo" />
+        <div className="menu-icon" onClick={toggleMenu}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
+        <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
+          <li>
+          <NavLink
           to="/"
           end
           className={({ isActive }) =>
@@ -23,47 +38,18 @@ function NavTabs() {
         >
           Home
         </NavLink>
-        </Button>
-
-      <Button variant='contained'>
-      <NavLink
-          to="about"
+        </li>
+          <li><NavLink
+          to="projectpage"
           className={({ isActive }) =>
             isActive ? 'nav-link active' : 'nav-link'
           }
         >
-          About
+          Project Page
         </NavLink>
-      </Button>
-    </Stack>
-
-      
-      <Button variant='contained'>
-      <NavLink
-          to="blog"
-          className={({ isActive }) =>
-            isActive ? 'nav-link active' : 'nav-link'
-          }
-        >
-          Experience
-        </NavLink>
-      </Button>
-      
-
-      <Button variant='contained'>
-      <NavLink
-          to="contact"
-          end
-          className={({ isActive }) =>
-            isActive ? 'nav-link active' : 'nav-link'
-          }
-        >
-          Projects
-        </NavLink>
-      </Button>
-      
-      <Button variant='contained'>
-      <NavLink
+          </li>
+          <li>
+          <NavLink
           to="contact/learn"
           className={({ isActive }) =>
             isActive ? 'nav-link active' : 'nav-link'
@@ -71,38 +57,11 @@ function NavTabs() {
         >
           Contact
         </NavLink>
-      </Button>
-
-      <nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-    
-    </div>
-    
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
-
-
-}
+};
 
 export default NavTabs;

@@ -1,6 +1,7 @@
 import React from 'react';
+import Project from './Project';
 
-function About() {
+function ProjectPage() {
   return (
     <div>
       <h1>About Page</h1>
@@ -12,8 +13,9 @@ function About() {
         imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus
         in. Sed rhoncus mollis diam, sit amet facilisis lectus blandit at.
       </p>
+      <Project />
     </div>
   );
 }
 
-export default About;
+export default ProjectPage;
