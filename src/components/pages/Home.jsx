@@ -1,16 +1,26 @@
 import React from 'react';
+import Olayemi from "../pages/olayemi.png";
+import { Jumbotron, Container } from 'react-bootstrap';
+
 
 function Home() {
   return (
     <div>
-      <div className='container -fluid mt-5'>
-      {/* image icon and logo that is clickable */}
-      <h5>Hi here <span>👋.</span>My name is</h5>
-      <h1>Rodiat Amusa</h1>
+       <Jumbotron>
+    <Container>
+      <h1>Hi here <span>👋.</span>My name</h1>
       <p>
-        I design beautiful website with the best programming language REACT framework.I can use Jquery as well if you insist
+      A software developer with years experience designing and building responsive web design in the technology
+        industry. Proficient with
+        CSS and JS Frameworks, with extensive knowledge of UX and user psychology. Notable achievements include boosting
+        the conversion
+        rate of an existing website by 80% with improved code and design.
       </p>
-      </div>
+    </Container>
+    {/* <img src="/path/to/your/image.jpg" alt="Jumbotron Image" className="img-fluid" /> */}
+    <img src={Olayemi} alt="Jumbotron Image" className='img-fluid' />
+
+  </Jumbotron>
       
     </div>
   );

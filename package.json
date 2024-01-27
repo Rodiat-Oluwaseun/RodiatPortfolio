@@ -16,10 +16,13 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.12",
     "@popperjs/core": "^2.11.8",
     "@trendmicro/react-sidenav": "^0.5.0",
-    "bootstrap": "^5.3.2",
+    "bootstrap": "^4.6.0",
+    "component": "^1.1.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.10.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.2",
+    "styled": "^1.0.0",
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
